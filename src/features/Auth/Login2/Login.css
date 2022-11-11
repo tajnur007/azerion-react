@@ -11,7 +11,6 @@
 .login-container {
   display: flex;
   flex-direction: column;
-  gap: 15px;
   background-color: white;
   padding: 40px;
   border: 1px solid white;
@@ -32,61 +31,55 @@
   height: 40px;
 }
 
-.welcome-section h2 {
+.login-text-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.login-title {
   font-size: 27px;
   font-weight: 500;
   color: #2D3147;
-  margin-bottom: .5rem;
 }
 
-.welcome-section p {
+.login-subtitle {
   color: #2C384AAE;
-  margin-bottom: 1rem;
+  font-size: 16px
+}
+
+.login-icon {
+  background-color: #D8DBE0;
+  padding: 6px 12px;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .login-input {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 10px 0px;
+  width: 376px;
+  height: 38px;
+  border-radius: .375rem;
+  padding: 0;
+  /* background-color: #2c99f71a !important; */
+  overflow: hidden;
 }
 
-.login-input p {
-  width: 80px;
-}
-
-.login-input input {
-  height: 35px;
-  padding: 0px 5px;
-  border: 1px solid #a5a5a5;
-  border-radius: 5px;
-  outline: 2px solid white;
-  width: 250px;
-  font-size: 14px;
-  transition: outline .3s ease;
-}
-
-input:focus {
-  border: 1px solid #0099f865;
-  outline: 2px solid #0099f865;
-}
-
-.login-input button {
-  height: 35px;
+.login-button {
+  border-radius: .375rem;
+  font-size: 1rem;
+  height: 38px;
   width: 100px;
-  background-color: #0099f8;
-  padding: 5px 20px;
-  margin-top: 15px;
-  font-size: 16px;
-  font-weight: 600;
-  color: white;
-  border: 0px;
-  border-radius: 5px;
-  cursor: pointer;
-  outline: 3px solid white;
-  transition: all .3s ease;
 }
 
-.login-input button:focus {
-  outline: 3px solid #0099f865;
+.mb-0 {
+  margin-bottom: 0px;
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+.mb-6 {
+  margin-bottom: 24px;
 }
