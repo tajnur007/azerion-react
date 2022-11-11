@@ -1,5 +1,6 @@
-import React, { FC, Suspense } from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { FC, Suspense } from 'react';
+import { RouterProvider } from 'react-router-dom';
+import { router } from '../routes/mainRoutes';
 
 const loading = (
   <div>
@@ -7,17 +8,7 @@ const loading = (
   </div>
 );
 
-// Pages
-const Login = React.lazy(() => import('../features/Auth/Login'));
-const Home = React.lazy(() => import('../features/Home'));
-
-const router = createBrowserRouter([
-  { path: "/", element: <Home /> },
-  { path: "/auth/login", element: <Login /> },
-]);
-
 const App: FC = () => {
-
   return (
     <Suspense fallback={loading} >
       <RouterProvider router={router} />
