@@ -1,25 +1,13 @@
 import React, { FC, Suspense } from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
+import { router } from '../routes/mainRoutes';
+import 'antd/dist/antd.css';
 
-const loading = (
-  <div>
-    Loading...
-  </div>
-);
-
-// Pages
-const Login = React.lazy(() => import('../features/Auth/Login'));
-const Home = React.lazy(() => import('../features/Home'));
-
-const router = createBrowserRouter([
-  { path: "/", element: <Home /> },
-  { path: "/auth/login", element: <Login /> },
-]);
+const Loading = React.lazy(() => import('../components/FullPageLoading'));
 
 const App: FC = () => {
-
   return (
-    <Suspense fallback={loading} >
+    <Suspense fallback={<Loading />} >
       <RouterProvider router={router} />
     </Suspense>
   );
