@@ -1,4 +1,4 @@
-export const dataSource = [
+export const DATA_SOURCE = [
   {
     key: '1',
     campaignName: 'UD_FR - DBM - Amnet - CIVP',
@@ -35,7 +35,7 @@ export const dataSource = [
   },
 ];
 
-export const columns = [
+export const COLUMNS = [
   {
     title: 'Campaign Name',
     dataIndex: 'campaignName',
@@ -106,4 +106,24 @@ export const columns = [
     dataIndex: 'platform',
     key: 'platform',
   },
+];
+
+export const PLATFORM_OPTIONS = [
+  { value: 'marketplace', label: 'Marketplace' },
+  { value: 'xandr', label: 'Xandr' },
+  { value: 'dv360', label: 'Dv360' },
+];
+
+export const BUSINESS_UNIT_OPTIONS = [
+  { value: 'azInternal', label: 'Azerion Internal' },
+  { value: 'azBD', label: 'Azerion Bangladesh' },
+  { value: 'azUK', label: 'Azerion UK' },
+  { value: 'azDuch', label: 'Azerion DUCH' },
+];
+
+export const STATUS_OPTIONS = [
+  { value: 'draft', label: 'Draft' },
+  { value: 'active', label: 'Active' },
+  { value: 'pause', label: 'Pause' },
+  { value: 'finished', label: 'Finished' },
 ];
