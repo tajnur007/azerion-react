@@ -1,0 +1,18 @@
+export interface CampaignTableDataType {
+  key: React.Key,
+  campaignName: string,
+  start: string,
+  end: string,
+  bookedImpressions: number,
+  deliveredImpressions: number,
+  clicks: number,
+  ctr: number,
+  cpm: number,
+  budget: number,
+  spend: number | null,
+  daysLeft: number,
+  margin: number,
+  osi: number | null,
+  platform: string,
+  children?: CampaignTableDataType[] | null,
+}
