@@ -1,12 +1,14 @@
-import { FC } from 'react';
-import { Input, Button, Row, Col, Typography, Select } from 'antd';
+import { FC, useState } from 'react';
+import { Input, Button, Row, Col, Select, Table } from 'antd';
+import { UpOutlined, DownOutlined } from '@ant-design/icons';
 import './MyCampaigns.css';
-import { BUSINESS_UNIT_OPTIONS, PLATFORM_OPTIONS, STATUS_OPTIONS } from '../../utils/constants/CAMPAIGN_DATA';
+import { BUSINESS_UNIT_OPTIONS, COLUMNS, DATA_SOURCE, PLATFORM_OPTIONS, STATUS_OPTIONS } from '../../utils/constants/CAMPAIGN_DATA';
 
 const { Search } = Input;
-const { Text } = Typography;
 
 const MyCampaigns: FC = () => {
+  const [isShowFilterOptions, setIsShowFilterOptions] = useState(false);
+
   const onSearch = (value: string) => console.log(value);
 
   /** Select Handlers Start */
@@ -26,19 +28,24 @@ const MyCampaigns: FC = () => {
 
   return (
     <div className="campaign-container">
-      <Text className="campaign-heading" strong> My Campaigns </Text>
+      <p className="campaign-heading"> My Campaigns </p>
 
       <div className="search-container">
-        <Search placeholder="Search" allowClear onSearch={onSearch} style={{ width: 200 }} />
-        <Button type="primary" shape="round" ghost>
-          Filters
+        <Search placeholder="Search" allowClear onSearch={onSearch} className="search-field" />
+        <Button
+          ghost
+          type="primary"
+          className="filter-btn"
+          onClick={() => setIsShowFilterOptions(prev => !prev)}
+        >
+          Filters {isShowFilterOptions ? <UpOutlined /> : <DownOutlined />}
         </Button>
       </div>
 
 
-      <Row gutter={16}>
+      <Row gutter={16} className="filter-section">
         <Col span={4}>
-          <Text className="filter-title" strong> Platform: </Text>
+          <p className="filter-title"> Platform: </p>
           <Select
             showArrow
             allowClear
@@ -48,10 +55,11 @@ const MyCampaigns: FC = () => {
             placeholder="Select Platform"
             options={PLATFORM_OPTIONS}
             onChange={handlePlatformChange}
+            className="filter-select"
           />
         </Col>
         <Col span={4}>
-          <Text className="filter-title" strong> Business Unit: </Text>
+          <p className="filter-title"> Business Unit: </p>
           <Select
             showArrow
             allowClear
@@ -64,7 +72,7 @@ const MyCampaigns: FC = () => {
           />
         </Col>
         <Col span={4}>
-          <Text className="filter-title" strong> Status: </Text>
+          <p className="filter-title"> Status: </p>
           <Select
             showArrow
             style={{ width: '100%' }}
@@ -74,13 +82,20 @@ const MyCampaigns: FC = () => {
           />
         </Col>
         <Col span={4}>
-          <Button type="primary" shape="round" ghost>
+          <Button
+            ghost
+            type="primary"
+            className="filter-btn"
+            onClick={() => null}
+          >
             Clear All
           </Button>
         </Col>
       </Row>
+
+      <Table dataSource={DATA_SOURCE} columns={COLUMNS} />
     </div>
-  )
+  );
 }
 
 export default MyCampaigns;
