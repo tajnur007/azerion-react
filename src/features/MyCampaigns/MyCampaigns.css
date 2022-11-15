@@ -54,7 +54,16 @@
   height: 40px !important;
 }
 
-.ant-select-selection-search {
-  display: flex;
-  align-items: center;
+.ant-select-selection-item {
+  align-self: center;
+}
+
+.campaign-table {
+  margin-top: 48px;
+}
+
+.clear-btn {
+  margin-top: 33px;
+  height: 40px;
+  border-radius: 0.375rem;
 }
