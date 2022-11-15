@@ -1,8 +1,9 @@
 import { FC, useState } from 'react';
-import { Input, Button, Row, Col, Select, Table } from 'antd';
+import { Input, Button, Row, Col, Select } from 'antd';
 import { UpOutlined, DownOutlined } from '@ant-design/icons';
+import { BUSINESS_UNIT_OPTIONS, PLATFORM_OPTIONS, STATUS_OPTIONS } from '../../utils/constants/CAMPAIGN_DATA';
+import MyCampaignsTable from './MyCampaignsTable';
 import './MyCampaigns.css';
-import { BUSINESS_UNIT_OPTIONS, COLUMNS, DATA_SOURCE, PLATFORM_OPTIONS, STATUS_OPTIONS } from '../../utils/constants/CAMPAIGN_DATA';
 
 const { Search } = Input;
 
@@ -94,7 +95,7 @@ const MyCampaigns: FC = () => {
         </Row>
       )}
 
-      <Table dataSource={DATA_SOURCE} columns={COLUMNS} className="campaign-table" />
+      <MyCampaignsTable />
     </div>
   );
 }

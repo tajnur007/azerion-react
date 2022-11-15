@@ -1,0 +1,7 @@
+.campaign-table {
+  margin-top: 48px;
+}
+
+.campaign-table .ant-select-selector {
+  height: 32px !important;
+}
